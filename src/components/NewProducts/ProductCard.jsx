@@ -1,17 +1,18 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+// import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ProductCard = ({ id, product, price, quantity, clearProduct }) => {
 	//const { product, price, quantity, clearProduct } = props;
 	return (
 		<>
-			<Card sx={{ height: 100, width: 100, border: 0, boxShadow: 0 }}>
+			<Card sx={{ height: 200, width: 200, border: 0, boxShadow: 0 }}>
 				<CardActionArea>
 					{/* <CardMedia
           component="img"
@@ -34,6 +35,9 @@ const ProductCard = ({ id, product, price, quantity, clearProduct }) => {
 			</Card>
 			<IconButton onClick={() => clearProduct(id)}>
 				<ClearIcon></ClearIcon>
+			</IconButton>
+			<IconButton onClick={() => clearProduct(id)}>
+				<AddShoppingCartIcon/>
 			</IconButton>
 			{/* child-parent communication */}
 		</>

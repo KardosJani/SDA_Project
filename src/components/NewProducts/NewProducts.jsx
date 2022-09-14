@@ -5,13 +5,35 @@ import { Button } from "@mui/material";
 import ProductCard from "./ProductCard";
 import "./NewProducts.css";
 
+
+const standardProducts = [
+	{
+		name: "Coca Cola",
+		id: 1,
+		price: 3.5,
+		quantity: 3
+	},
+	{
+		name: "Pampers",
+		id: 2,
+		price: 5,
+		quantity: 10
+	},
+	{
+		name: "Milka",
+		id: 3,
+		price: 3,
+		quantity: 20
+	},
+];
+
 // let newId = 1;
-function NewProducts() {
+function NewProducts(props) {
 	const [price, setPrice] = useState();
 	const [quantity, setQuantity] = useState();
-	const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState(standardProducts);
 	const [text, setText] = useState("");
-	let [newId, setNewId] = useState(1);
+	let [newId, setNewId] = useState(standardProducts.length + 1);
 	const addProduct = () => {
 		const newProducts = [...products];
 		newProducts.push({
@@ -61,6 +83,7 @@ function NewProducts() {
 
 	return (
 		<div>
+			{props.children}
 			<br />
 			<br />
 			<div className="container">

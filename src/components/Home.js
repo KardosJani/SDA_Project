@@ -1,18 +1,20 @@
-import React from 'react';
-
-import { auth } from '../service/firebase'
-
+import React from "react";
+import NavBar from "./NavBar/NavBar";
 // import '../App.css';
 
 const Home = ({ user }) => {
-    console.log(user);
-    return (
-        <div >
-            <h1>Hello, <span></span>{user.displayName}</h1>
-            <img src={user.photoURL} />
-            <button className="button signout" onClick={() => auth.signOut()}>Sign out</button>
-        </div>
-    )
-}
+  console.log(user);
+  return (
+    <div>
+      <NavBar />
+
+      <h1>
+        Hello, <span></span>
+        {user.displayName}
+      </h1>
+      <img src={user.photoURL} />
+    </div>
+  );
+};
 
 export default Home;

@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import Employee from "./Employee";
 import "./Employee.css";
 
-function Employees() {
+function Employees(props) {
   const [employees, setEmployees] = useState([]);
   const [initialEmployees, setInitialEmployees] = useState([]);
   const [text, setText] = useState("");
@@ -42,15 +42,17 @@ function Employees() {
   };
   return (
     <div>
+      {props.children}
       <br />
       <TextField
+        
         label="Search Employees"
         color="primary"
         focused
         value={text}
         onChange={changeText}
       />
-      <ul className="card-items">
+      <ul className="card-items" >
         {employees.map((employee) => (
           <Employee key={employee.id} id={employee.id} name={employee.name} email={employee.email} company={employee.company} />
         ))}
